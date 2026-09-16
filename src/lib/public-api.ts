@@ -7,6 +7,7 @@
  * client-side, no-cache version used on the tour detail page.
  */
 import { API_BASE_URL } from "@/lib/api-client";
+import { toArray } from "@/lib/format";
 import type { Tour, PageResult, Locale } from "@/types";
 
 async function publicGet<T>(path: string): Promise<T | null> {
@@ -32,8 +33,10 @@ export async function getPublishedTours(params: {
   if (params.lang) qs.set("lang", params.lang);
   qs.set("page", String(params.page ?? 1));
 
-  const data = await publicGet<PageResult<Tour>>(`/api/public/tours?${qs.toString()}`);
-  return data ?? { items: [], page: 1, pageSize: 12, total: 0 };
+  // BE /api/public/tours tra ve mang thuan (List<Tour>), khong bao boc PageResult.
+  const data = await publicGet<Tour[] | PageResult<Tour>>(`/api/public/tours?${qs.toString()}`);
+  const items = toArray<Tour>(data ?? undefined);
+  return { items, page: params.page ?? 1, pageSize: items.length, total: items.length };
 }
 
 export async function getTourBySlug(slug: string) {

@@ -24,6 +24,10 @@ export default async function TourDetailPage({
   if (!tour) notFound();
 
   const t = await getTranslations("tourDetail");
+  // Tour dang soan (chua nhap du itinerary/inclusions/exclusions) co the co cac truong nay = null.
+  const itinerary = tour.itinerary ?? [];
+  const inclusions = tour.inclusions ?? [];
+  const exclusions = tour.exclusions ?? [];
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">
@@ -39,7 +43,7 @@ export default async function TourDetailPage({
           <section>
             <h2 className="text-xl font-semibold mb-4">{t("itinerary")}</h2>
             <ol className="space-y-4">
-              {tour.itinerary.map((day) => (
+              {itinerary.map((day) => (
                 <li key={day.day} className="border rounded-lg p-4">
                   <p className="font-semibold text-teal-700">
                     {t("day", { n: day.day })} — {bi(day.title, locale)}
@@ -47,7 +51,7 @@ export default async function TourDetailPage({
                   <p className="text-sm text-muted-foreground mt-1">{bi(day.detail, locale)}</p>
                 </li>
               ))}
-              {tour.itinerary.length === 0 && (
+              {itinerary.length === 0 && (
                 <p className="text-sm text-muted-foreground">—</p>
               )}
             </ol>
@@ -57,7 +61,7 @@ export default async function TourDetailPage({
             <section>
               <h2 className="text-lg font-semibold mb-2">{t("inclusions")}</h2>
               <ul className="list-disc list-inside text-sm space-y-1">
-                {tour.inclusions.map((item, i) => (
+                {inclusions.map((item, i) => (
                   <li key={i}>{bi(item, locale)}</li>
                 ))}
               </ul>
@@ -65,7 +69,7 @@ export default async function TourDetailPage({
             <section>
               <h2 className="text-lg font-semibold mb-2">{t("exclusions")}</h2>
               <ul className="list-disc list-inside text-sm space-y-1">
-                {tour.exclusions.map((item, i) => (
+                {exclusions.map((item, i) => (
                   <li key={i}>{bi(item, locale)}</li>
                 ))}
               </ul>
