@@ -97,7 +97,7 @@ export default function NewTourRequestPage() {
   if (submitted) {
     return (
       <div className="mx-auto max-w-lg px-4 py-20 text-center">
-        <h1 className="text-2xl font-bold text-teal-700">{t("successTitle")}</h1>
+        <h1 className="text-2xl font-bold text-primary">{t("successTitle")}</h1>
         <p className="mt-3 text-muted-foreground">{t("successBody")}</p>
       </div>
     );

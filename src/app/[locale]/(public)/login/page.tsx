@@ -100,7 +100,7 @@ export default function LoginPage() {
           </Form>
           <p className="text-sm text-muted-foreground mt-4 text-center">
             {t("noAccount")}{" "}
-            <Link href="/register" className="text-teal-700 font-medium">
+            <Link href="/register" className="text-primary font-medium">
               {t("registerNow")}
             </Link>
           </p>

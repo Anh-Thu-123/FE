@@ -128,7 +128,7 @@ export default function BookingFlowPage() {
   if (result) {
     return (
       <div className="mx-auto max-w-md px-4 py-20 text-center">
-        <h1 className="text-2xl font-bold text-teal-700">{t("holdSuccessTitle")}</h1>
+        <h1 className="text-2xl font-bold text-primary">{t("holdSuccessTitle")}</h1>
         <p className="mt-3 text-muted-foreground">
           {t("holdSuccessBody", {
             code: result.code,
@@ -151,7 +151,7 @@ export default function BookingFlowPage() {
               <p className="font-semibold">{formatDate(departure.departDate, locale)}</p>
               <p className="text-sm text-muted-foreground">Mã đoàn: {departure.code}</p>
             </div>
-            <p className="font-semibold text-teal-700">
+            <p className="font-semibold text-primary">
               {formatCurrency(departure.priceAdult, departure.currency)} / khách
             </p>
           </CardContent>
@@ -163,7 +163,7 @@ export default function BookingFlowPage() {
           <div
             key={s}
             className={`flex-1 text-center py-2 rounded-md border ${
-              i === step ? "bg-teal-600 text-white" : "bg-muted"
+              i === step ? "bg-primary text-primary-foreground" : "bg-muted"
             }`}
           >
             {t(`steps.${s}`)}
@@ -316,7 +316,7 @@ export default function BookingFlowPage() {
                         <p className="text-xs text-muted-foreground">{bi(addOn.description, locale)}</p>
                       </div>
                     </div>
-                    <span className="font-semibold text-teal-700 text-sm">
+                    <span className="font-semibold text-primary text-sm">
                       {formatCurrency(addOn.price, addOn.currency)}
                     </span>
                   </label>

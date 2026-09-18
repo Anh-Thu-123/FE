@@ -12,19 +12,22 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="border-b bg-white/80 backdrop-blur sticky top-0 z-40">
+    <header className="border-b bg-background/80 backdrop-blur sticky top-0 z-40">
       <div className="mx-auto max-w-6xl flex items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="font-bold text-lg tracking-tight text-teal-700">
+        <Link href="/" className="font-bold text-lg tracking-tight text-primary font-[family-name:var(--font-heading)]">
           Nagare Travel
         </Link>
         <nav className="hidden md:flex items-center gap-5 text-sm font-medium">
-          <Link href="/tours" className={pathname === "/tours" ? "text-teal-700" : ""}>
+          <Link href="/about" className={pathname === "/about" ? "text-primary" : "text-foreground/80 hover:text-primary transition-colors"}>
+            {t("about")}
+          </Link>
+          <Link href="/tours" className={pathname === "/tours" ? "text-primary" : "text-foreground/80 hover:text-primary transition-colors"}>
             {t("tours")}
           </Link>
-          <Link href="/tour-requests/new">{t("customTour")}</Link>
-          {status === "authenticated" && <Link href="/my-bookings">{t("myBookings")}</Link>}
+          <Link href="/tour-requests/new" className="text-foreground/80 hover:text-primary transition-colors">{t("customTour")}</Link>
+          {status === "authenticated" && <Link href="/my-bookings" className="text-foreground/80 hover:text-primary transition-colors">{t("myBookings")}</Link>}
           {status === "authenticated" && user && user.role !== "CUSTOMER" && (
-            <Link href="/admin" className="text-teal-700 font-semibold">
+            <Link href="/admin" className="text-accent-foreground font-semibold">
               {t("admin")}
             </Link>
           )}

@@ -53,7 +53,7 @@ export function DepartureList({ tourId, locale }: { tourId: string; locale: stri
             <p className="text-sm text-muted-foreground">
               {isFull ? t("full") : t("seatsLeft", { n: seats })}
             </p>
-            <p className="text-sm font-semibold text-teal-700">
+            <p className="text-sm font-semibold text-primary">
               {formatCurrency(dep.priceAdult, dep.currency)}
             </p>
             {isFull ? (

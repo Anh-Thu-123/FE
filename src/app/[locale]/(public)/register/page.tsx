@@ -114,7 +114,7 @@ export default function RegisterPage() {
           </Form>
           <p className="text-sm text-muted-foreground mt-4 text-center">
             {t("haveAccount")}{" "}
-            <Link href="/login" className="text-teal-700 font-medium">
+            <Link href="/login" className="text-primary font-medium">
               {t("loginNow")}
             </Link>
           </p>
