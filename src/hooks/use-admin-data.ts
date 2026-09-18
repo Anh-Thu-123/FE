@@ -190,6 +190,30 @@ export function useEmployees() {
   });
 }
 
+export interface CreateStaffAccountPayload {
+  username: string;
+  role: string;
+  fullName: string;
+  position?: string;
+  department: string;
+  phone?: string;
+}
+
+export interface CreateStaffAccountResult {
+  username: string;
+  tempPassword: string;
+}
+
+/** Cap tai khoan noi bo + tao ho so nhan su cung luc - xem POST /api/admin/users. */
+export function useCreateStaffAccount() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (payload: CreateStaffAccountPayload) =>
+      api.post<CreateStaffAccountResult>("/api/admin/users", payload),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["admin-employees"] }),
+  });
+}
+
 /* --------------------------------- Leave requests ---------------------------------- */
 export function useLeaveRequests() {
   return useQuery({
