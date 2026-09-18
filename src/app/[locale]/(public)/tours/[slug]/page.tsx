@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { getTourBySlug } from "@/lib/public-api";
@@ -15,6 +17,31 @@ export async function generateStaticParams() {
   // Best-effort pre-render; falls back to on-demand ISR when the backend
   // isn't reachable at build time (dynamicParams: true above).
   return [];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const tour = await getTourBySlug(slug);
+  if (!tour) return {};
+
+  const title = bi(tour.title, locale);
+  const description = bi(tour.summary, locale);
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: tour.coverImage ? [{ url: tour.coverImage }] : undefined,
+    },
+    twitter: { card: "summary_large_image", title, description },
+  };
 }
 
 export default async function TourDetailPage({
@@ -36,16 +63,31 @@ export default async function TourDetailPage({
 
   return (
     <div>
-      <div className="relative h-56 md:h-80 w-full">
+      <div className="relative h-64 w-full overflow-hidden bg-muted md:h-[26rem]">
         {tour.coverImage ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={tour.coverImage} alt={bi(tour.title, locale)} className="h-full w-full object-cover" />
+          <Image
+            src={tour.coverImage}
+            alt={bi(tour.title, locale)}
+            fill
+            // Anh hero la phan tu LCP -> uu tien tai va bao truoc be rong that.
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         ) : (
           <TourCoverArt theme={tour.theme} className="h-full w-full" iconClassName="h-24 w-24 md:h-32 md:w-32" />
         )}
+        {/* Chuyen dan sang mau nen de phan tieu de ben duoi noi lien mach voi anh. */}
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"
+          aria-hidden
+        />
+        <span className="surface-glass absolute top-4 left-4 rounded-full px-3 py-1.5 font-mono text-xs font-semibold tracking-wide shadow-sm md:left-[max(1rem,calc((100vw-64rem)/2))]">
+          {tour.code}
+        </span>
       </div>
 
-      <div className="mx-auto max-w-5xl px-4 py-10">
+      <div className="relative mx-auto -mt-12 max-w-5xl px-4 pb-16 md:-mt-16">
         <Reveal>
           <div className="flex gap-2 mb-3">
             <Badge variant="secondary">{tType(tour.type)}</Badge>

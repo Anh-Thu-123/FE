@@ -1,5 +1,7 @@
 {
-  "brand": { "name": "Nagare Travel" },
+  "brand": {
+    "name": "Nagare Travel"
+  },
   "nav": {
     "home": "Trang chủ",
     "about": "Giới thiệu",
@@ -9,7 +11,13 @@
     "login": "Đăng nhập",
     "register": "Đăng ký",
     "logout": "Đăng xuất",
-    "admin": "Khu quản trị"
+    "admin": "Khu quản trị",
+    "themeLight": "Chuyển sang giao diện sáng",
+    "themeDark": "Chuyển sang giao diện tối",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu",
+    "menuTitle": "Điều hướng",
+    "skipToContent": "Tới nội dung chính"
   },
   "home": {
     "heroTitle": "Nagare Travel – Dòng chảy những hành trình Nhật Bản",
@@ -63,10 +71,19 @@
     "contactEmail": "Email",
     "contactFanpage": "Fanpage"
   },
-  "tourType": { "OUTBOUND": "Outbound", "INBOUND": "Inbound", "DOMESTIC": "Nội địa" },
+  "tourType": {
+    "OUTBOUND": "Outbound",
+    "INBOUND": "Inbound",
+    "DOMESTIC": "Nội địa"
+  },
   "tourTheme": {
-    "HEALING": "Chữa lành", "YOUTH": "Tuổi trẻ", "ACADEMIC": "Học thuật",
-    "CLASSIC": "Cổ điển", "NATURE": "Thiên nhiên", "ADVENTURE": "Phiêu lưu", "HERITAGE": "Di sản"
+    "HEALING": "Chữa lành",
+    "YOUTH": "Tuổi trẻ",
+    "ACADEMIC": "Học thuật",
+    "CLASSIC": "Cổ điển",
+    "NATURE": "Thiên nhiên",
+    "ADVENTURE": "Phiêu lưu",
+    "HERITAGE": "Di sản"
   },
   "tours": {
     "title": "Danh mục tour",
@@ -76,7 +93,11 @@
     "durationLabel": "{days} ngày {nights} đêm",
     "fromPrice": "Từ",
     "viewDetail": "Xem chi tiết",
-    "noResults": "Không tìm thấy tour phù hợp."
+    "noResults": "Không tìm thấy tour phù hợp.",
+    "subtitle": "Chọn hành trình theo loại hình và chủ đề bạn quan tâm.",
+    "resultCount": "{count} tour",
+    "clearFilters": "Xoá bộ lọc",
+    "noResultsHint": "Thử bỏ bớt bộ lọc hoặc gửi yêu cầu thiết kế tour riêng."
   },
   "tourDetail": {
     "itinerary": "Lịch trình theo ngày",
@@ -106,7 +127,12 @@
     "changePassword": "Đổi mật khẩu"
   },
   "booking": {
-    "steps": { "departure": "Ngày khởi hành", "contact": "Thông tin khách", "addOns": "Dịch vụ cộng thêm", "confirm": "Xác nhận" },
+    "steps": {
+      "departure": "Ngày khởi hành",
+      "contact": "Thông tin khách",
+      "addOns": "Dịch vụ cộng thêm",
+      "confirm": "Xác nhận"
+    },
     "contactInfo": "Thông tin liên hệ",
     "fullName": "Họ và tên",
     "phone": "Số điện thoại",
@@ -155,7 +181,12 @@
     "paid": "Đã thu",
     "balance": "Còn lại"
   },
-  "bookingStatus": { "HELD": "Đang giữ chỗ", "CONFIRMED": "Đã xác nhận", "COMPLETED": "Hoàn tất", "CANCELLED": "Đã huỷ" },
+  "bookingStatus": {
+    "HELD": "Đang giữ chỗ",
+    "CONFIRMED": "Đã xác nhận",
+    "COMPLETED": "Hoàn tất",
+    "CANCELLED": "Đã huỷ"
+  },
   "admin": {
     "dashboard": "Tổng quan",
     "tours": "Quản lý tour",
@@ -182,5 +213,22 @@
     "loading": "Đang tải...",
     "noData": "Không có dữ liệu",
     "welcomeBack": "Chào mừng trở lại, {name}"
+  },
+  "footer": {
+    "tagline": "Dòng chảy kết nối Việt Nam và Nhật Bản qua từng hành trình.",
+    "explore": "Khám phá",
+    "company": "Công ty",
+    "contact": "Liên hệ",
+    "rights": "Bảo lưu mọi quyền."
+  },
+  "error": {
+    "title": "Đã có sự cố xảy ra",
+    "desc": "Chúng tôi chưa tải được nội dung này. Vui lòng thử lại.",
+    "retry": "Thử lại"
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang",
+    "desc": "Trang bạn tìm có thể đã được đổi tên hoặc gỡ bỏ.",
+    "home": "Về trang chủ"
   }
 }

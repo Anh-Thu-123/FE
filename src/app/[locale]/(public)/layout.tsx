@@ -5,7 +5,10 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
-      <main className="flex-1">{children}</main>
+      {/* id="main" la dich den cua skip-link tren header (rule P1 Accessibility). */}
+      <main id="main" className="flex-1">
+        {children}
+      </main>
       <SiteFooter />
     </div>
   );

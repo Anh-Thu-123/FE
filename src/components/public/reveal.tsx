@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 /** Fade+slide khi cuon toi, dung chung cho cac section tren trang cong khai. */
@@ -15,12 +15,15 @@ export function Reveal({
   className?: string;
   y?: number;
 }) {
+  // P7 Animation: nguoi bat "giam chuyen dong" thay noi dung hien ngay, khong truot.
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y }}
+      initial={reduceMotion ? false : { opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : delay, ease: "easeOut" }}
       className={className}
     >
       {children}
