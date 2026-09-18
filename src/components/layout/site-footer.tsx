@@ -20,7 +20,7 @@ export async function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <p className="font-[family-name:var(--font-heading)] text-lg font-bold text-primary">
-              Nagare<span className="text-accent">.</span>
+              Nagare<span className="text-brand">.</span>
             </p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t("tagline")}
@@ -34,17 +34,17 @@ export async function SiteFooter() {
             <h2 className="text-sm font-semibold text-foreground">{t("contact")}</h2>
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
               <li className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden />
+                <MapPin className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
                 <span>Kintsugi Kyoto – Kanazawa</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="size-4 shrink-0 text-accent" aria-hidden />
+                <Mail className="size-4 shrink-0 text-brand" aria-hidden />
                 <a className="hover:text-foreground" href="mailto:info@nagare.travel">
                   info@nagare.travel
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="size-4 shrink-0 text-accent" aria-hidden />
+                <Phone className="size-4 shrink-0 text-brand" aria-hidden />
                 <a className="hover:text-foreground" href="tel:+842839999999">
                   +84 28 3999 9999
                 </a>

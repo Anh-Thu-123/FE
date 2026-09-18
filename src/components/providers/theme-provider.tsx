@@ -12,8 +12,11 @@ export function ThemeProvider({ children, ...props }: ComponentProps<typeof Next
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      // Nagare dung mot ban sac sang duy nhat. Bang mau .dark van con trong
+      // globals.css - doi defaultTheme="system" + enableSystem la bat lai duoc.
+      defaultTheme="light"
+      forcedTheme="light"
+      enableSystem={false}
       disableTransitionOnChange
       {...props}
     >

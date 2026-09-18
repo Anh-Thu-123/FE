@@ -24,7 +24,7 @@ export function HeroWaves() {
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.path
-          fill="var(--accent)"
+          fill="var(--brand)"
           fillOpacity="0.08"
           initial={{ d: "M0,150 C400,90 900,190 1440,120 L1440,200 L0,200 Z" }}
           animate={{

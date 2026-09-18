@@ -26,18 +26,18 @@ export default async function HomePage({
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-b from-primary/8 via-accent/5 to-background">
+      <section className="relative overflow-hidden bg-[radial-gradient(120%_80%_at_50%_0%,color-mix(in_oklch,var(--primary)_7%,transparent)_0%,color-mix(in_oklch,var(--brand)_5%,transparent)_45%,var(--background)_100%)]">
         <HeroWaves />
         <div className="relative mx-auto max-w-6xl px-4 py-24 text-center md:py-32">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/12 px-4 py-1.5 text-xs font-medium tracking-wide text-accent-foreground dark:text-accent">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-brand/8 px-4 py-1.5 text-xs font-medium tracking-[0.08em] text-brand uppercase">
               <Sparkles className="size-3.5" aria-hidden />
               Kintsugi · Kyoto · Kanazawa
             </span>
           </Reveal>
           <Reveal delay={0.05}>
             {/* text-balance (dat o globals) giu tieu de khong bi lech dong tren mobile. */}
-            <h1 className="mt-6 font-[family-name:var(--font-heading)] text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
+            <h1 className="mt-6 font-[family-name:var(--font-heading)] text-4xl leading-[1.08] md:text-[3.5rem]">
               {t("heroTitle")}
             </h1>
           </Reveal>
@@ -128,7 +128,7 @@ export default async function HomePage({
               <Link
                 key={theme}
                 href={{ pathname: "/tours", query: { theme } }}
-                className="inline-flex min-h-10 items-center rounded-full border px-4 text-sm transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex min-h-10 items-center rounded-full border px-4 text-sm transition-colors hover:border-brand hover:bg-brand hover:text-brand-foreground"
               >
                 {tTheme(theme)}
               </Link>

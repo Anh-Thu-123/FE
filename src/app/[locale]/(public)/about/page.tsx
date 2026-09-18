@@ -159,7 +159,7 @@ export default async function AboutPage() {
           {services.map((s, i) => (
             <Reveal key={s.name} delay={i * 0.08}>
               <div className="rounded-xl border p-5 h-full text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300 bg-card">
-                <s.icon className="h-7 w-7 text-accent mx-auto mb-3" strokeWidth={1.5} />
+                <s.icon className="h-7 w-7 text-brand mx-auto mb-3" strokeWidth={1.5} />
                 <h3 className="font-semibold text-sm mb-1">{s.name}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>

@@ -5,7 +5,6 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { useAuth } from "@/components/providers/auth-provider";
 import { Button } from "@/components/ui/button";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { MobileNav, type NavItem } from "@/components/layout/mobile-nav";
 import { cn } from "cn";
 
@@ -39,7 +38,7 @@ export function SiteHeader() {
           href="/"
           className="font-[family-name:var(--font-heading)] text-lg font-bold tracking-tight text-primary"
         >
-          Nagare<span className="text-accent">.</span>
+          Nagare<span className="text-brand">.</span>
         </Link>
 
         <nav className="hidden items-center gap-1 text-sm font-medium md:flex">
@@ -69,7 +68,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <ThemeToggle />
           <LocaleSwitcher />
 
           <div className="hidden items-center gap-2 md:flex">

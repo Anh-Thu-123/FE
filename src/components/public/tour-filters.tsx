@@ -122,7 +122,7 @@ function Chip({
         active
           ? tone === "primary"
             ? "border-primary bg-primary text-primary-foreground"
-            : "border-accent bg-accent text-accent-foreground"
+            : "border-brand bg-brand text-brand-foreground"
           : "border-border text-foreground/80 hover:border-foreground/30 hover:bg-muted"
       )}
     >
